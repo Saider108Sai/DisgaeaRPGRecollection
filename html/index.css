@@ -1,0 +1,66 @@
+body {
+	color:#eee;
+	background-color: #012;
+}
+
+table {
+	border-collapse: collapse;
+	border: 8px solid #ccc;
+	border-bottom-color: #888;
+	border-right-color: #888;
+	line-height: 1.5;
+}
+
+th, td {
+	border-collapse: collapse;
+	border: 2px solid #ccc;
+	line-height: 1.5;
+}
+
+th {
+	text-align: center ;
+	background-color: #048;
+	padding: 10px 20px 10px 20px;
+	text-shadow: 4px 4px 3px #000000;
+}
+
+h1
+{
+	text-align: center ;
+	text-shadow: 4px 4px 3px #000000;
+	background-color: #058;
+	padding: 40px 80px 40px 80px;
+	border: 4px solid #ccc;
+	border-bottom-color: #888;
+	border-right-color: #888;
+}
+h2
+{
+	text-align: center ;
+	text-shadow: 4px 4px 3px #000000;
+	background-color: #058;
+	padding: 10px 40px 10px 40px;
+	border: 4px solid #ccc;
+	border-bottom-color: #888;
+	border-right-color: #888;
+}
+
+td {
+	padding: 0px 20px 0px 20px;
+}
+
+
+td.check {
+	text-align: center ;
+}
+
+a{
+	text-decoration: none;
+	color:#8CC;
+}
+
+a:hover
+{
+	text-decoration: underline dotted;
+	color:#CFF;
+}
