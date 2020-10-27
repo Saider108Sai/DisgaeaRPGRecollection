@@ -117,9 +117,28 @@ function onLoaded()
 		g_sortIndex = url_parameter["sort"] - 1;
 	}
 
-
 	let table = document.getElementById('targetTable');
 	var i,j;
+
+	//*
+	// 読み込み 
+	$.getJSON("index.json" , function(data)
+	{
+		console.log(data.length);
+		for(var i = 0; i < data.length; i++)
+		{
+			if( data[i] === "" )
+			{
+			}
+			else
+			{
+				let newCell = table.rows[0].insertCell( -1 );
+				newCell.outerHTML = "<th>" + "<a href=./index.html?sort=" + ( i + 1 ) + ">" + data[i] + "</a></th>";
+			}
+		}
+	});
+
+	//*/
 
 	// 読み込み 
 	$.getJSON("data.json" , function(data)
