@@ -111,17 +111,18 @@ function getUrlParameter()
 // --------------------------------------------------------------------------
 function onLoaded()
 {
+	// HTML POSTからのパラメータ読み込み 
 	var url_parameter = getUrlParameter();
 	if( url_parameter.sort )
 	{
 		g_sortIndex = url_parameter["sort"] - 1;
 	}
 
+	// テーブルへの要素追加開始 
 	let table = document.getElementById('targetTable');
 	var i,j;
 
-	//*
-	// 読み込み 
+	// イベントの読み込み 
 	$.getJSON("index.json" , function(data)
 	{
 		console.log(data.length);
@@ -138,14 +139,10 @@ function onLoaded()
 		}
 	});
 
-	//*/
-
 	// 読み込み 
 	$.getJSON("data.json" , function(data)
 	{
-		console.log(data.length);
-		console.log(`${data[0].名前}`);
-
+		// ソート処理 
 		data.sort( compareShortName );
 		data.sort( compareName );
 		// ソート命令があったら 
@@ -154,18 +151,17 @@ function onLoaded()
 			data.sort( compareSort );
 		}
 
-		//		alert('成功' + data.length );
+		// ソート後リスト表示 
 		for(var i = 0; i < data.length; i++)
 		{
 			let newRow = table.insertRow();
 			let newCell = newRow.insertCell();
 			let newText = document.createTextNode( data[i].name );
-			newCell.appendChild(newText);
+			newCell.outerHTML = "<td>" + data[i].name + "</td>";
 
 			for( j = 0 ; j < data[i].flag.length ; j = j + 1 )
 			{
 				newCell = newRow.insertCell();
-	
 				if( data[i].flag[j] == 0 )
 				{
 					newText = document.createTextNode( "―" );
