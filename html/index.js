@@ -157,7 +157,7 @@ function onLoaded()
 			let newRow = table.insertRow();
 			let newCell = newRow.insertCell();
 			let newText = document.createTextNode( data[i].name );
-			newCell.outerHTML = "<td>" + data[i].name + "</td>";
+			newCell.outerHTML = "<td class='name'><input type='checkbox' name='riyu' value='1'> " + data[i].name + "</td>";
 
 			for( j = 0 ; j < data[i].flag.length ; j = j + 1 )
 			{
